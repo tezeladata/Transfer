@@ -41,4 +41,3 @@ def binary_to_string(binary):
             listn.append(string)
             string = ''
     return ''.join([chr(int(binary_str, 2)) for binary_str in listn])
-
