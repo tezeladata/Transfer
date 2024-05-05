@@ -2,7 +2,7 @@ import random #Random to choose random word from list
 from words import all_words #Importing 5000 words list
 from PIL import Image #To show image of current phase
 
-all_images = ["projects/hangman/phase1.png", "projects/hangman/phase2.png", "projects/hangman/phase3.png", "projects/hangman/phase4.png", "projects/hangman/phase5.png", "projects/hangman/phase6.png"] #Images of hangman phases
+all_images = ["phase1.png", "phase2.png", "phase3.png", "phase4.png", "phase5.png", "phase6.png"] #Images of hangman phases
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
