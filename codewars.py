@@ -165,3 +165,47 @@ def format_words(words):
         return " and ".join(words)
     else:
         return ", ".join(words[:-1]) + " and " + words[-1]
+    
+# Tic-Tac-Toe Checker
+def is_solved(board):
+    correct_arr = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+
+    for arr in correct_arr:
+        if all(board[i//3][i%3] == 1 for i in arr):
+            return 1
+        elif all(board[i//3][i%3] == 2 for i in arr):
+            return 2
+    
+    if any(0 in row for row in board):
+        return -1
+    
+    return 0
+
+# What's a Perfect Power anyway?
+def isPP(n):
+    for i in range(2, int(n**.5) + 1):
+        number = n
+        times = 0
+        while number % i == 0:
+            number /= i
+            times += 1
+            if number == 1:
+                return [i, times]
+    return None
+
+# String incrementer
+def increment_string(strng):
+    stripped = strng.rstrip('1234567890')
+
+    ints = strng[len(stripped):]
+
+    if len(ints) == 0:
+        return strng + '1'
+    else:
+        length = len(ints)
+
+        new_ints = 1 + int(ints)
+
+        new_ints = str(new_ints).zfill(length)
+
+        return stripped + new_ints
