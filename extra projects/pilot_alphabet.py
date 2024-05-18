@@ -1,4 +1,15 @@
-def to_nato(words: str) -> str:
+def main():
+    # Starter func
+    def greeting():
+        print("Hello, this code converts natural text to nato language text.")
+        print("After your input, you will get translated text\n")
+
+    greeting()
+
+    # User input:
+    words = input("Enter text here: ")
+
+    # Did not use library, just dict
     d = {
         'A': 'Alfa',  'B': 'Bravo',   'C': 'Charlie',
         'D': 'Delta',  'E': 'Echo',    'F': 'Foxtrot',
@@ -11,6 +22,8 @@ def to_nato(words: str) -> str:
         'Y': 'Yankee', 'Z': 'Zulu'
     }
     
-    return " ".join([d[char] if char in d else char for char in words.upper() if char in d or char in ",.!?"])
+    res = " ".join([d[char] if char in d else char for char in words.upper() if char in d or char in ",.!?"])
 
-print(to_nato(input("Enter text here: ")))
+    print(f"After translating, your text looks like: {res}")
+
+main()
