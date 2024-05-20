@@ -119,3 +119,100 @@ def twos_difference(list):
 def twos_difference(lst):
     lst.sort()
     return [(lst[i], lst[j]) for i in range(len(lst)) for j in range(i + 1, len(lst)) if lst[j] - lst[i] == 2]
+
+# Find the Mine!
+def mine_location(field):
+    res = [[field.index(arr), arr.index(1)] for arr in field if 1 in arr]
+    return [res[0][0], res[0][1]]
+
+# Transform To Prime
+def minimum_number(numbers):
+    return sorted([i for i in range(sum(numbers), sum(numbers) + 35) if is_prime(i)])[0] - sum(numbers)
+    
+def is_prime(val):
+    is_prime = True
+    
+    for i in range(2, int(val**0.5) + 1):
+        if val % i == 0:
+            is_prime = False
+    
+    return is_prime
+
+# Moves in squared strings (II)
+def rot(string):
+    words = string.replace("\n", " ").split()
+    reversed_words = [word[::-1] for word in words]
+    return "\n".join(reversed(reversed_words))
+    
+    return string
+
+def selfie_and_rot(string):
+    words = string.replace("\n", " ").split()
+    selfie = "\n".join([word + "." * len(word) for word in words])
+    
+    rotated_words = rot(string).split("\n")
+    selfie_rotated = "\n".join(["." * len(word) + word for word in rotated_words])
+    
+    return selfie + "\n" + selfie_rotated
+    
+def oper(fct, s):
+    return fct(s)
+# or:
+def rot(string):
+    return "\n".join(reversed([word[::-1] for word in string.replace("\n", " ").split()]))
+
+def selfie_and_rot(string):
+    return "\n".join([word + "." * len(word) for word in string.replace("\n", " ").split()]) + "\n" + "\n".join(["." * len(word) + word for word in rot(string).split("\n")])
+    
+def oper(fct, s):
+    return fct(s)
+# or:
+def rot(string):
+    return string[::-1]
+
+def selfie_and_rot(string):
+    return "\n".join([word + "." * len(word) for word in string.replace("\n", " ").split()]) + "\n" + "\n".join(["." * len(word) + word for word in rot(string).split("\n")])
+    
+def oper(fct, s):
+    return fct(s)
+
+# Hamming Distance
+def hamming(a,b):
+    return len([1 for i in range(len(a)) if a[i] != b[i]])
+
+# All Star Code Challenge #15
+def rotate(s):
+    if not s:
+        return []
+    
+    res = []
+    length = len(s)
+    
+    for i in range(length):
+        rotated = s[i:] + s[:i]
+        res.append(rotated)
+        
+    return res[1:] + [res[0]]
+
+# How many pages in a book?
+def amount_of_pages(summary):
+    res = ""
+    
+    original = 1
+    while len(res) != summary:
+        res += str(original)
+        original += 1
+        
+    return original - 1
+
+# Paginating a huge book
+def page_digits(pages):
+    digits = 0
+    length = len(str(pages))
+    
+    for i in range(1, length):
+        digits += i * 9 * 10**(i-1)
+    
+    digits += length * (pages - 10**(length-1) + 1)
+    
+    return digits
