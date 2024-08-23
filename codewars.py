@@ -171,3 +171,232 @@ def calc(v):
         start /= 10
     
     return res
+
+# How many pages in a book?
+def amount_of_pages(summary):
+    total_digits = 0
+    page = 0
+    
+    while total_digits < summary:
+        page += 1
+        total_digits += len(str(page))
+    
+    return page
+
+# Positions Average
+def pos_average(s):
+    substrings = s.split(", ")
+    n = len(substrings)
+    length = len(substrings[0])
+    total_positions = n * (n - 1) // 2 * length
+    matching_positions = 0
+
+    for i in range(n):
+        for j in range(i + 1, n):
+            for k in range(length):
+                if substrings[i][k] == substrings[j][k]:
+                    matching_positions += 1
+
+    return (matching_positions / total_positions) * 100
+
+# What's A Name In?
+def name_in_str(strng, name):
+    strng = strng.lower()
+    name = name.lower()
+    name_index = 0
+    
+    for char in strng:
+        if char == name[name_index]:
+            name_index += 1
+        if name_index == len(name):
+            return True
+    
+    return False
+
+# Are we alternate?
+def is_alt(s):
+    for i in range(len(s[:-1])):
+        if s[i] in "aeiou":
+            if s[i+1] in "aeiou": return False
+        if s[i] not in "aeiou":
+            if s[i+1] not in "aeiou": return False
+    
+    return True
+
+# Arrays Similar
+def arrays_similar(seq1, seq2):
+    def count_elements(seq):
+        element_count = {}
+        for element in seq:
+            if element in element_count:
+                element_count[element] += 1
+            else:
+                element_count[element] = 1
+        return element_count
+    
+    return count_elements(seq1) == count_elements(seq2)
+
+# Shortest steps to a number
+def shortest_steps_to_num(num):
+    steps = 0
+    while num > 1:
+        if num % 2 == 0:
+            num //= 2
+        else:
+            num -= 1
+        steps += 1
+    return steps
+
+# Custom FizzBuzz Array
+def fizz_buzz_custom(string_one="Fizz", string_two="Buzz", num_one=3, num_two=5): 
+    res = []
+    
+    for i in range(1, 101):
+        if i%num_one == 0 and i%num_two == 0: res.append(string_one + string_two)
+        elif i%num_one == 0 and i%num_two != 0: res.append(string_one)
+        elif i%num_one != 0 and i%num_two == 0: res.append(string_two)
+        else: res.append(i)
+    
+    return res
+
+# Alphabet war - airstrike - letters massacre
+def alphabet_war(fight):
+    fight_list = list(fight)
+    for i in range(len(fight)):
+        if fight[i] == '*':
+            if i > 0:
+                fight_list[i-1] = '_'
+            fight_list[i] = '_'
+            if i < len(fight) - 1:
+                fight_list[i+1] = '_'
+    
+    fight = ''.join(fight_list)
+    left_side_power, right_side_power = {'w': 4, 'p': 3, 'b': 2, 's': 1}, {'m': 4, 'q': 3, 'd': 2, 'z': 1}
+    left_score, right_score = sum(left_side_power.get(ch, 0) for ch in fight), sum(right_side_power.get(ch, 0) for ch in fight)
+    
+    if left_score > right_score: return "Left side wins!"
+    elif right_score > left_score: return "Right side wins!"
+    else: return "Let's fight again!"
+
+# Simple Sentences
+def make_sentences(parts):
+    res = parts[0]
+    
+    for i in parts[1:]:
+        if i == ',': res += ','
+        else: res += ' ' + i
+    return res.rstrip(' .') + '.'
+
+# Only Duplicates
+def only_duplicates(st):
+    return "".join([i for i in st if st.count(i) > 1])
+
+# Find within array
+def find_in_array(seq, predicate):
+    for index, value in enumerate(seq):
+        if predicate(value, index):
+            return index
+    return -1
+
+# Most Frequent Weekdays
+from datetime import datetime, timedelta
+
+def most_frequent_days(year):
+    days_count = {day: 0 for day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']}
+    
+    is_leap = (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
+    num_days = 366 if is_leap else 365
+    
+    current_date = datetime(year, 1, 1)
+    
+    for _ in range(num_days):
+        weekday = current_date.strftime('%A')
+        days_count[weekday] += 1
+        current_date += timedelta(days=1)
+    
+    max_count = max(days_count.values())
+    
+    most_frequent = [day for day, count in days_count.items() if count == max_count]
+    
+    return most_frequent
+
+# Ackermann Function
+def Ackermann(m, n, calls=[0]):
+    calls[0] += 1
+    if m == 0:
+        return n + 1
+    elif n == 0:
+        return Ackermann(m - 1, 1, calls)
+    else:
+        inner_result = Ackermann(m, n - 1, calls)
+        return Ackermann(m - 1, inner_result, calls)
+
+def get_ackermann_result(m, n):
+    calls = [0]
+    result = Ackermann(m, n, calls)
+    return result, calls[0]
+
+# Error correction #1 - Hamming Code
+def encode(string):
+    ascii = [ord(i) for i in string]
+    binary = [bin(i)[2:] for i in ascii]
+    eight = ["0"*(8-len(i))+i for i in binary]
+    triples = []
+    for i in eight:
+        res = ""
+        for x in i:
+            res += 3*x
+        triples.append(res)
+    return "".join(triples)
+
+def decode(s):
+    triples = [s[i:i+3] for i in range(0, len(s), 3)]
+    corrected = [0 if str(i).count("0") > str(i).count("1") else 1 for i in triples]
+    bytes = [corrected[i:i+8] for i in range(0, len(corrected), 8)]
+    bytes_upt = []
+    for i in bytes: bytes_upt.append("".join([str(x) for x in i]))
+    ascii = [int(i, 2) for i in bytes_upt]
+    chars = [chr(i) for i in ascii]
+    return "".join(chars)
+
+# Prime Factors
+def prime_factors(num):
+    if num < 2:
+        return []
+    
+    factors = []
+    n = 2
+
+    while n**2 <= num:
+        if num % n == 0:
+            factors.append(n)
+            num //= n
+        else:
+            n += 1
+    
+    if num > 1:
+        factors.append(num)
+
+    return factors
+
+# More Zeros than Ones
+def more_zeros(s):
+    binary, filtered = [bin(ord(i))[2:] for i in s], []
+    for i in binary:
+        if i.count("0") > i.count("1"): filtered.append(i)
+    res = [chr(int(i, 2)) for i in filtered]
+    fin = []
+    for i in res:
+        if i not in fin: fin.append(i)
+    return fin
+
+# Simple Simple Simple String Expansion
+def string_expansion(s):
+    res = []
+    num = 1
+    for i in s:
+        if i.isdigit():
+            num = int(i)
+        else:
+            res.append(num * i)
+    return ''.join(res)
