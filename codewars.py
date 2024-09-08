@@ -97,3 +97,5 @@ def is_odd_heavy(arr):
     
     if not odd_elements: return False
     return min(odd_elements) > max(even_elements) if even_elements else True
+
+
