@@ -31,4 +31,10 @@
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 100px;
   }
+  .text-smaller {
+    font-size: 10px;
+  }
+  .text-smallest {
+    font-size: 8px;
+  }
 }
