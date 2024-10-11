@@ -5,7 +5,7 @@ import github from '../assets/github.png';
 
 const FooterMain = () => {
     return (
-        <div className="pt-10 pb-10 px-72 shadow-2xl max-[1700px]:px-40 max-[1000px]:px-20 max-[500px]:px-10"> {/* container */}
+        <div className="pt-20 pb-10 px-72 shadow-2xl max-[1700px]:px-40 max-[1000px]:px-20 max-[500px]:px-10"> {/* container */}
             <div className="bg-green-900 border-top-custom flex items-center justify-start">
                 <div className="h-16 w-16 ml-64 rounded-full bg-white cursor-pointer max-[1700px]:ml-16 max-[1100px]:h-12 max-[1100px]:w-12 max-[800px]:h-8 max-[800px]:w-8"></div>
                 <p className="pt-16 pb-16 pl-8 text-white font-bold text-3xl cursor-pointer font-MonaSpace max-[1100px]:text-xl max-[1100px]:pt-8 max-[1100px]:pb-8">Contact us</p>
