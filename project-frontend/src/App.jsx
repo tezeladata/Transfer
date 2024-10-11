@@ -4,16 +4,16 @@ import Info from "./Pages/Info.jsx";
 
 const App = () => {
     return (
-        <body className="h-screen scroll-smooth font-roboto">
+        <body className="h-screen scroll-smooth font-roboto bg-gray-300">
             <Home />
 
-            <main className="h-screen">
+            <main className="h-screen bg-gray-300">
                 <Info />
             </main>
 
-            {/* <footer>
+            <footer>
                 <Footer />
-            </footer> */}
+            </footer>
         </body>
     )
 }

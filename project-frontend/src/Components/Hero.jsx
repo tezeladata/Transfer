@@ -6,7 +6,7 @@ const Hero = () => {
         <section className="h-full bg-black flex items-center justify-between max-[1000px]:flex-col" style={{ backgroundImage: `url(${backgroundImage})` }}>
             <div className="w-1/2 h-full flex flex-col justify-center items-center">
                 <h1 className="font-bold text-8xl text-white p-4 text-center font-MonaSpace text-shadow-glow max-[1750px]:text-6xl max-[1000px]:text-4xl max-[1000px]:pt-8 max-[600px]:pt-12 max-[600px]:text-2xl">GOA website</h1>
-                <p className="text-gray-400 text-2xl font-MonaSpace font-bold text-shadow-glow max-[1750px]:text-xl max-[1500px]:text-sm max-[1200px]:text-xs max-[500px]:text-smallest">Website for tasks automation and better data visualization</p>
+                <p className="text-gray-400 text-2xl font-MonaSpace font-bold text-center text-shadow-glow max-[1750px]:text-xl max-[1500px]:text-sm max-[1200px]:text-xs max-[500px]:text-smallest">Website for tasks automation and better data visualization</p>
             </div> 
 
             <div className="w-1/2 h-full flex justify-center items-center">
