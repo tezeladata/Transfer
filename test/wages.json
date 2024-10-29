@@ -1,0 +1,416 @@
+[
+  {
+    "Name": "Aleksandre Ghomidze",
+    "Wage": 30,
+    "Speed 1 count": 2,
+    "Speed 2 count": 1,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 3
+  },
+  {
+    "Name": "Aleksandre Melikjaniani",
+    "Wage": 210,
+    "Speed 1 count": 0,
+    "Speed 2 count": 10,
+    "Speed 3 count": 3,
+    "Speed 4 count": 0,
+    "member count": 13
+  },
+  {
+    "Name": "Andria Alavidze",
+    "Wage": 105,
+    "Speed 1 count": 6,
+    "Speed 2 count": 4,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 10
+  },
+  {
+    "Name": "Andria Arakhamia",
+    "Wage": 127.5,
+    "Speed 1 count": 7,
+    "Speed 2 count": 5,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 12
+  },
+  {
+    "Name": "Andria Kobakhidze",
+    "Wage": 165,
+    "Speed 1 count": 6,
+    "Speed 2 count": 8,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 14
+  },
+  {
+    "Name": "Andria Svanidze",
+    "Wage": 112.5,
+    "Speed 1 count": 3,
+    "Speed 2 count": 6,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 9
+  },
+  {
+    "Name": "Aleksi Pitava",
+    "Wage": 15,
+    "Speed 1 count": 2,
+    "Speed 2 count": 0,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 2
+  },
+  {
+    "Name": "Ani Razmadze",
+    "Wage": 90,
+    "Speed 1 count": 4,
+    "Speed 2 count": 4,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 8
+  },
+  {
+    "Name": "Atuka Khuskivadze",
+    "Wage": 240,
+    "Speed 1 count": 2,
+    "Speed 2 count": 11,
+    "Speed 3 count": 3,
+    "Speed 4 count": 0,
+    "member count": 16
+  },
+  {
+    "Name": "Berdia Bekauri",
+    "Wage": 115,
+    "Speed 1 count": 10,
+    "Speed 2 count": 1,
+    "Speed 3 count": 0,
+    "Speed 4 count": 1,
+    "member count": 12
+  },
+  {
+    "Name": "Dachi Alania",
+    "Wage": 112.5,
+    "Speed 1 count": 5,
+    "Speed 2 count": 5,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 10
+  },
+  {
+    "Name": "Daniel Abramiani",
+    "Wage": 427.5,
+    "Speed 1 count": 7,
+    "Speed 2 count": 21,
+    "Speed 3 count": 3,
+    "Speed 4 count": 0,
+    "member count": 31
+  },
+  {
+    "Name": "Data Popkhadze",
+    "Wage": 275,
+    "Speed 1 count": 4,
+    "Speed 2 count": 11,
+    "Speed 3 count": 4,
+    "Speed 4 count": 0,
+    "member count": 19
+  },
+  {
+    "Name": "Davit Adeishvili",
+    "Wage": 45,
+    "Speed 1 count": 0,
+    "Speed 2 count": 3,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 3
+  },
+  {
+    "Name": "Davit Grdzelishvili",
+    "Wage": 690,
+    "Speed 1 count": 8,
+    "Speed 2 count": 14,
+    "Speed 3 count": 16,
+    "Speed 4 count": 4,
+    "member count": 42
+  },
+  {
+    "Name": "Davit Narimanidze",
+    "Wage": 67.5,
+    "Speed 1 count": 1,
+    "Speed 2 count": 0,
+    "Speed 3 count": 3,
+    "Speed 4 count": 0,
+    "member count": 4
+  },
+  {
+    "Name": "Erekle Kilasonia",
+    "Wage": 275,
+    "Speed 1 count": 4,
+    "Speed 2 count": 15,
+    "Speed 3 count": 1,
+    "Speed 4 count": 0,
+    "member count": 20
+  },
+  {
+    "Name": "Gabriel Jakhveladze",
+    "Wage": 245,
+    "Speed 1 count": 4,
+    "Speed 2 count": 10,
+    "Speed 3 count": 2,
+    "Speed 4 count": 1,
+    "member count": 17
+  },
+  {
+    "Name": "Giga khutishvili",
+    "Wage": 67.5,
+    "Speed 1 count": 9,
+    "Speed 2 count": 0,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 9
+  },
+  {
+    "Name": "Giga Kochalidze",
+    "Wage": 187.5,
+    "Speed 1 count": 5,
+    "Speed 2 count": 10,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 15
+  },
+  {
+    "Name": "Giorgi gvritishvili",
+    "Wage": 377.5,
+    "Speed 1 count": 15,
+    "Speed 2 count": 11,
+    "Speed 3 count": 5,
+    "Speed 4 count": 0,
+    "member count": 31
+  },
+  {
+    "Name": "Giorgi Shavadze",
+    "Wage": 167.5,
+    "Speed 1 count": 3,
+    "Speed 2 count": 8,
+    "Speed 3 count": 0,
+    "Speed 4 count": 1,
+    "member count": 12
+  },
+  {
+    "Name": "Giorgi Vanishvili",
+    "Wage": 327.5,
+    "Speed 1 count": 5,
+    "Speed 2 count": 14,
+    "Speed 3 count": 4,
+    "Speed 4 count": 0,
+    "member count": 23
+  },
+  {
+    "Name": "Giorgi Varadashvili",
+    "Wage": 122.5,
+    "Speed 1 count": 7,
+    "Speed 2 count": 3,
+    "Speed 3 count": 0,
+    "Speed 4 count": 1,
+    "member count": 11
+  },
+  {
+    "Name": "Giorgi Varazashvili",
+    "Wage": 97.5,
+    "Speed 1 count": 5,
+    "Speed 2 count": 4,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 9
+  },
+  {
+    "Name": "Gobron tsitlauri",
+    "Wage": 325,
+    "Speed 1 count": 8,
+    "Speed 2 count": 15,
+    "Speed 3 count": 2,
+    "Speed 4 count": 0,
+    "member count": 25
+  },
+  {
+    "Name": "Guram papunashvili",
+    "Wage": 662.5,
+    "Speed 1 count": 7,
+    "Speed 2 count": 28,
+    "Speed 3 count": 7,
+    "Speed 4 count": 2,
+    "member count": 44
+  },
+  {
+    "Name": "Guram vakhtangashvili",
+    "Wage": 712.5,
+    "Speed 1 count": 3,
+    "Speed 2 count": 28,
+    "Speed 3 count": 11,
+    "Speed 4 count": 2,
+    "member count": 44
+  },
+  {
+    "Name": "ilia dzindzibadze",
+    "Wage": 427.5,
+    "Speed 1 count": 7,
+    "Speed 2 count": 22,
+    "Speed 3 count": 1,
+    "Speed 4 count": 1,
+    "member count": 31
+  },
+  {
+    "Name": "Irakli Kvinchia",
+    "Wage": 187.5,
+    "Speed 1 count": 9,
+    "Speed 2 count": 8,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 17
+  },
+  {
+    "Name": "Levani Samsonidze",
+    "Wage": 330,
+    "Speed 1 count": 6,
+    "Speed 2 count": 15,
+    "Speed 3 count": 3,
+    "Speed 4 count": 0,
+    "member count": 24
+  },
+  {
+    "Name": "Luka Gurgenidze",
+    "Wage": 317.5,
+    "Speed 1 count": 5,
+    "Speed 2 count": 12,
+    "Speed 3 count": 5,
+    "Speed 4 count": 0,
+    "member count": 22
+  },
+  {
+    "Name": "Luka Lortqifanidze",
+    "Wage": 427.5,
+    "Speed 1 count": 5,
+    "Speed 2 count": 19,
+    "Speed 3 count": 4,
+    "Speed 4 count": 1,
+    "member count": 29
+  },
+  {
+    "Name": "Nika Edisherashvili",
+    "Wage": 177.5,
+    "Speed 1 count": 5,
+    "Speed 2 count": 8,
+    "Speed 3 count": 1,
+    "Speed 4 count": 0,
+    "member count": 14
+  },
+  {
+    "Name": "Nika Kvaracxelia",
+    "Wage": 365,
+    "Speed 1 count": 10,
+    "Speed 2 count": 10,
+    "Speed 3 count": 7,
+    "Speed 4 count": 0,
+    "member count": 27
+  },
+  {
+    "Name": "Nikoloz Nutsubidze",
+    "Wage": 87.5,
+    "Speed 1 count": 1,
+    "Speed 2 count": 4,
+    "Speed 3 count": 1,
+    "Speed 4 count": 0,
+    "member count": 6
+  },
+  {
+    "Name": "Nikoloz Qimeridze",
+    "Wage": 127.5,
+    "Speed 1 count": 5,
+    "Speed 2 count": 6,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 11
+  },
+  {
+    "Name": "Nikoloz Tchitadze",
+    "Wage": 285,
+    "Speed 1 count": 2,
+    "Speed 2 count": 11,
+    "Speed 3 count": 4,
+    "Speed 4 count": 1,
+    "member count": 18
+  },
+  {
+    "Name": "Saba isakadze",
+    "Wage": 200,
+    "Speed 1 count": 2,
+    "Speed 2 count": 8,
+    "Speed 3 count": 2,
+    "Speed 4 count": 1,
+    "member count": 13
+  },
+  {
+    "Name": "Sandro Chapidze",
+    "Wage": 140,
+    "Speed 1 count": 4,
+    "Speed 2 count": 6,
+    "Speed 3 count": 1,
+    "Speed 4 count": 0,
+    "member count": 11
+  },
+  {
+    "Name": "Sandro Zabakhidze",
+    "Wage": 55,
+    "Speed 1 count": 0,
+    "Speed 2 count": 1,
+    "Speed 3 count": 2,
+    "Speed 4 count": 0,
+    "member count": 3
+  },
+  {
+    "Name": "Tsotne Gujabidze",
+    "Wage": 377.5,
+    "Speed 1 count": 7,
+    "Speed 2 count": 16,
+    "Speed 3 count": 3,
+    "Speed 4 count": 1,
+    "member count": 27
+  },
+  {
+    "Name": "Ucha Khuberishvili",
+    "Wage": 380,
+    "Speed 1 count": 6,
+    "Speed 2 count": 17,
+    "Speed 3 count": 4,
+    "Speed 4 count": 0,
+    "member count": 27
+  },
+  {
+    "Name": "Vano Motiashvili",
+    "Wage": 1017.5,
+    "Speed 1 count": 5,
+    "Speed 2 count": 46,
+    "Speed 3 count": 7,
+    "Speed 4 count": 6,
+    "member count": 64
+  },
+  {
+    "Name": "Zuka abashidze",
+    "Wage": 740,
+    "Speed 1 count": 10,
+    "Speed 2 count": 32,
+    "Speed 3 count": 8,
+    "Speed 4 count": 1,
+    "member count": 51
+  },
+  {
+    "Name": "Zuka qoridze",
+    "Wage": 185,
+    "Speed 1 count": 6,
+    "Speed 2 count": 8,
+    "Speed 3 count": 1,
+    "Speed 4 count": 0,
+    "member count": 15
+  }
+ ]
