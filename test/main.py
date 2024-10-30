@@ -5,21 +5,6 @@ with open("wages.json") as json_file:
     data = json.load(json_file)
 start_info = [[i["Name"], {"speed count sum": i["Speed 1 count"] + i["Speed 2 count"] * 2 + i["Speed 3 count"] * 3 + i["Speed 4 count"] * 4, "Wage": i["Wage"]}, [i["Speed 1 count"], i["Speed 2 count"], i["Speed 3 count"], i["Speed 4 count"]]] for i in data]
 
-'''
-speed count dependant renewing of wages
-
-<10 , wage = 6.75
-10:15 , wage = 7
-16:20, wage = 7.25
-21:25, wage = 7.5
-25:30, wage = 7.75
-30:35 , wage = 8 
-35:40, wage = 8.25
-40:45, wage = 8.5
-45:50, wage = 8.75
-50 + = giga chad leader , wage = 9
-'''
-
 
 def generate_wages(matrix):
     fin_info = []
