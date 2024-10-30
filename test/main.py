@@ -70,26 +70,9 @@ with open("wage_changes.txt", "w", encoding="utf-8") as file:
         total_inc += inc
 
         if new_wage - old > 0:
-            message = f"{i[0]} - ძველი სახელფასო სისტემით სექტემბერს ხელფასი ექნებოდა {old} ლარი, ახალი სისტემის წყალობით მას გაუხდა {new_wage} ლარი, ანუ მისი ხელფასი გაიზარდა {new_wage - old} ლარით.\n"
+            message = f"{i[0]} - ძველი სახელფასო სისტემით ოქტომბერს ხელფასი ექნებოდა {old} ლარი, ახალი სისტემის წყალობით მას გაუხდა {new_wage} ლარი, ანუ მისი ხელფასი გაიზარდა {new_wage - old} ლარით.\n"
         else:
-            message = f"{i[0]} - ძველი სახელფასო სისტემით სექტემბერს ხელფასი ექნებოდა {old} ლარი, ახალი სისტემის წყალობით მას გაუხდა {new_wage} ლარი, ანუ მისი ხელფასი შემცირდა {(new_wage - old) * -1} ლარით.\n"
-
-        file.write(message + "\n")
-
-print(f"Sum of wage increase is: {total_inc}")
-
-
-with open("second.txt", "w", encoding="utf-8") as file:
-    for i in new:
-        inc = i[1]["Wage increase"]
-        old = i[1]["Old wage"]
-        new_wage = i[1]["New wage"]
-        total_inc += inc
-
-        if new_wage - old > 0:
-            message = f"+++++ {i[0]} - ძველი {old} ლარი, ახალი  {new_wage} ლარი,  გაიზარდა {new_wage - old} ლარით.\n"
-        else:
-            message = f"----- {i[0]} - ძველი  {old} ლარი, ახალი  {new_wage} ლარი,  შემცირდა {(new_wage - old) * -1} ლარით.\n"
+            message = f"{i[0]} - ძველი სახელფასო სისტემით ოქტომბერს ხელფასი ექნებოდა {old} ლარი, ახალი სისტემის წყალობით მას გაუხდა {new_wage} ლარი, ანუ მისი ხელფასი შემცირდა {(new_wage - old) * -1} ლარით.\n"
 
         file.write(message + "\n")
 
