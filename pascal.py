@@ -22,7 +22,7 @@ res = generate_pascals_triangle()
 for i in range(len(res)):
     plt.plot([sum(res[i])], [i], marker='o', color='green', label="Row sums" if i == 0 else "")  
 
-x = range(n**4)
+x = range(len([i for i in res])**4)
 y = np.log2(x)  
 plt.plot(x, y, label=r'$y = \log_2(x)$', color='blue')
 
