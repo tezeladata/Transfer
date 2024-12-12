@@ -11,7 +11,7 @@ def lucky_leader(all, res_arr):
     print("Lucky leader is:\n")
 
     # Simple timer
-    start = 5
+    start = 10
     while start > 0:
         print(start)
         start -= 1
