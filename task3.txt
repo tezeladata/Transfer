@@ -1,0 +1,85 @@
+Algorithm with more operations:
+
+largest = a
+if b > largest then
+    largest = b
+end if
+
+if c > largest then
+    largest = c
+end if
+
+if d > largest then
+    largest = d
+end if
+
+if e > largest then
+    largest = e
+end if
+
+return largest
+
+
+
+Algorithm with less operations:
+if a > b then
+    if a > c then
+        if a > d then
+            if a > e:
+                return a
+            else:
+                return e
+            end if
+        else
+            if d > e:
+                return d
+            else: 
+                return e
+            end if
+        end if
+    else
+        if c > d then
+            if c > e:
+                return c
+            else 
+                return e
+            end if
+        else
+            if d > e:
+                return d
+            else:
+                return e
+            end if
+        end if
+    end if
+else
+    if b > c then
+        if b > d then
+            if b > e:
+                return b
+            else:
+                return e
+            end if
+        else
+            if d > e:
+                return d
+            else:
+                return e
+            end if
+        end if
+    else
+        if c > d then
+            if c > e:
+                return c
+            else:
+                return e
+            end if
+        else
+            if d > e:
+                return d
+            else:
+                return e
+            end if
+        end if
+    end if
+end if
