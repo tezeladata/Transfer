@@ -1,0 +1,452 @@
+[
+  {
+    "Leader": "ათუკა ხუსკივაძე",
+    "Salary": 120,
+    "Speed 1 count": 2,
+    "Speed 2 count": 7,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 9
+  },
+  {
+    "Leader": "ალექსანდრე ჭანკვეტაძე",
+    "Salary": 0,
+    "Speed 1 count": 0,
+    "Speed 2 count": 0,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 0
+  },
+  {
+    "Leader": "ალექსანდრე ხომერიკი",
+    "Salary": 40,
+    "Speed 1 count": 0,
+    "Speed 2 count": 0,
+    "Speed 3 count": 2,
+    "Speed 4 count": 0,
+    "member count": 2
+  },
+  {
+    "Leader": "ალექსი პიტავა",
+    "Salary": 60,
+    "Speed 1 count": 4,
+    "Speed 2 count": 2,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 6
+  },
+  {
+    "Leader": "ანა ფუთურიძე",
+    "Salary": 0,
+    "Speed 1 count": 0,
+    "Speed 2 count": 0,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 0
+  },
+  {
+    "Leader": "ანდრია ალავიძე",
+    "Salary": 125,
+    "Speed 1 count": 8,
+    "Speed 2 count": 3,
+    "Speed 3 count": 1,
+    "Speed 4 count": 0,
+    "member count": 12
+  },
+  {
+    "Leader": "ანდრია არახამია",
+    "Salary": 47.5,
+    "Speed 1 count": 1,
+    "Speed 2 count": 0,
+    "Speed 3 count": 2,
+    "Speed 4 count": 0,
+    "member count": 3
+  },
+  {
+    "Leader": "ანდრია კობახიძე",
+    "Salary": 302.5,
+    "Speed 1 count": 9,
+    "Speed 2 count": 13,
+    "Speed 3 count": 2,
+    "Speed 4 count": 0,
+    "member count": 24
+  },
+  {
+    "Leader": "ანდრია სვანიძე",
+    "Salary": 155,
+    "Speed 1 count": 2,
+    "Speed 2 count": 8,
+    "Speed 3 count": 1,
+    "Speed 4 count": 0,
+    "member count": 11
+  },
+  {
+    "Leader": "ანდრია ქორჩილავა",
+    "Salary": 30,
+    "Speed 1 count": 2,
+    "Speed 2 count": 1,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 3
+  },
+  {
+    "Leader": "ანი რაზმაძე",
+    "Salary": 112.5,
+    "Speed 1 count": 7,
+    "Speed 2 count": 4,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 11
+  },
+  {
+    "Leader": "ბესო გელხაური",
+    "Salary": 265,
+    "Speed 1 count": 4,
+    "Speed 2 count": 13,
+    "Speed 3 count": 2,
+    "Speed 4 count": 0,
+    "member count": 19
+  },
+  {
+    "Leader": "გიგა კოჩალიძე",
+    "Salary": 190,
+    "Speed 1 count": 4,
+    "Speed 2 count": 8,
+    "Speed 3 count": 2,
+    "Speed 4 count": 0,
+    "member count": 14
+  },
+  {
+    "Leader": "გიგა ხუციშვილი",
+    "Salary": 127.5,
+    "Speed 1 count": 9,
+    "Speed 2 count": 4,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 13
+  },
+  {
+    "Leader": "გიორგი ბიბილაშვილი",
+    "Salary": 0,
+    "Speed 1 count": 0,
+    "Speed 2 count": 0,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 0
+  },
+  {
+    "Leader": "გიორგი გვრიტიშვილი",
+    "Salary": 360,
+    "Speed 1 count": 8,
+    "Speed 2 count": 12,
+    "Speed 3 count": 6,
+    "Speed 4 count": 0,
+    "member count": 26
+  },
+  {
+    "Leader": "გიორგი გიორგობიანი",
+    "Salary": 0,
+    "Speed 1 count": 0,
+    "Speed 2 count": 0,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 0
+  },
+  {
+    "Leader": "გიორგი ვანიშვილი",
+    "Salary": 177.5,
+    "Speed 1 count": 3,
+    "Speed 2 count": 9,
+    "Speed 3 count": 1,
+    "Speed 4 count": 0,
+    "member count": 13
+  },
+  {
+    "Leader": "გიორგი ვარადაშვილი",
+    "Salary": 122.5,
+    "Speed 1 count": 5,
+    "Speed 2 count": 4,
+    "Speed 3 count": 0,
+    "Speed 4 count": 1,
+    "member count": 10
+  },
+  {
+    "Leader": "გიორგი ზირაქაშვილი",
+    "Salary": 0,
+    "Speed 1 count": 0,
+    "Speed 2 count": 0,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 0
+  },
+  {
+    "Leader": "გიორგი შავაძე",
+    "Salary": 122.5,
+    "Speed 1 count": 3,
+    "Speed 2 count": 5,
+    "Speed 3 count": 0,
+    "Speed 4 count": 1,
+    "member count": 9
+  },
+  {
+    "Leader": "გიორგი ცხადაძე",
+    "Salary": 0,
+    "Speed 1 count": 0,
+    "Speed 2 count": 0,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 0
+  },
+  {
+    "Leader": "გიორგი ხმალაძე",
+    "Salary": 175,
+    "Speed 1 count": 2,
+    "Speed 2 count": 5,
+    "Speed 3 count": 3,
+    "Speed 4 count": 1,
+    "member count": 11
+  },
+  {
+    "Leader": "გობრონ წითლაური",
+    "Salary": 322.5,
+    "Speed 1 count": 7,
+    "Speed 2 count": 18,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 25
+  },
+  {
+    "Leader": "გურამ ვახტანგაშვილი",
+    "Salary": 510,
+    "Speed 1 count": 4,
+    "Speed 2 count": 21,
+    "Speed 3 count": 7,
+    "Speed 4 count": 1,
+    "member count": 33
+  },
+  {
+    "Leader": "გურამ პაპუნაშვილი",
+    "Salary": 550,
+    "Speed 1 count": 6,
+    "Speed 2 count": 22,
+    "Speed 3 count": 5,
+    "Speed 4 count": 3,
+    "member count": 36
+  },
+  {
+    "Leader": "დავით ადეიშვილი",
+    "Salary": 35,
+    "Speed 1 count": 0,
+    "Speed 2 count": 1,
+    "Speed 3 count": 1,
+    "Speed 4 count": 0,
+    "member count": 2
+  },
+  {
+    "Leader": "დავით გრძელიშვილი",
+    "Salary": 807.5,
+    "Speed 1 count": 7,
+    "Speed 2 count": 22,
+    "Speed 3 count": 15,
+    "Speed 4 count": 5,
+    "member count": 49
+  },
+  {
+    "Leader": "დავით ნარიმანიძე",
+    "Salary": 372.5,
+    "Speed 1 count": 7,
+    "Speed 2 count": 12,
+    "Speed 3 count": 7,
+    "Speed 4 count": 0,
+    "member count": 26
+  },
+  {
+    "Leader": "დათა ფოფხაძე",
+    "Salary": 225,
+    "Speed 1 count": 4,
+    "Speed 2 count": 9,
+    "Speed 3 count": 3,
+    "Speed 4 count": 0,
+    "member count": 16
+  },
+  {
+    "Leader": "დანიელ აბრამიანი",
+    "Salary": 412.5,
+    "Speed 1 count": 1,
+    "Speed 2 count": 23,
+    "Speed 3 count": 3,
+    "Speed 4 count": 0,
+    "member count": 27
+  },
+  {
+    "Leader": "დაჩი ალანია",
+    "Salary": 105,
+    "Speed 1 count": 2,
+    "Speed 2 count": 3,
+    "Speed 3 count": 1,
+    "Speed 4 count": 1,
+    "member count": 7
+  },
+  {
+    "Leader": "ერეკლე კილასონია",
+    "Salary": 192.5,
+    "Speed 1 count": 3,
+    "Speed 2 count": 10,
+    "Speed 3 count": 1,
+    "Speed 4 count": 0,
+    "member count": 14
+  },
+  {
+    "Leader": "ვანო მოთიაშვილი",
+    "Salary": 907.5,
+    "Speed 1 count": 5,
+    "Speed 2 count": 45,
+    "Speed 3 count": 6,
+    "Speed 4 count": 3,
+    "member count": 59
+  },
+  {
+    "Leader": "ზუკა აბაშიძე",
+    "Salary": 655,
+    "Speed 1 count": 8,
+    "Speed 2 count": 20,
+    "Speed 3 count": 11,
+    "Speed 4 count": 3,
+    "member count": 42
+  },
+  {
+    "Leader": "ზუკა ქორიძე",
+    "Salary": 277.5,
+    "Speed 1 count": 3,
+    "Speed 2 count": 9,
+    "Speed 3 count": 6,
+    "Speed 4 count": 0,
+    "member count": 18
+  },
+  {
+    "Leader": "ილია ძინძიბაძე",
+    "Salary": 315,
+    "Speed 1 count": 6,
+    "Speed 2 count": 15,
+    "Speed 3 count": 1,
+    "Speed 4 count": 1,
+    "member count": 23
+  },
+  {
+    "Leader": "ლევანი სამსონიძე",
+    "Salary": 445,
+    "Speed 1 count": 2,
+    "Speed 2 count": 11,
+    "Speed 3 count": 7,
+    "Speed 4 count": 5,
+    "member count": 25
+  },
+  {
+    "Leader": "ლიკა ჩხიკვაძე",
+    "Salary": 0,
+    "Speed 1 count": 0,
+    "Speed 2 count": 0,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 0
+  },
+  {
+    "Leader": "ლუკა გურგენიძე",
+    "Salary": 325,
+    "Speed 1 count": 4,
+    "Speed 2 count": 13,
+    "Speed 3 count": 5,
+    "Speed 4 count": 0,
+    "member count": 22
+  },
+  {
+    "Leader": "ნიკა ედიშერაშვილი",
+    "Salary": 150,
+    "Speed 1 count": 10,
+    "Speed 2 count": 5,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 15
+  },
+  {
+    "Leader": "ნიკა თავართქილაძე",
+    "Salary": 0,
+    "Speed 1 count": 0,
+    "Speed 2 count": 0,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 0
+  },
+  {
+    "Leader": "ნიკა კვარაცხელია",
+    "Salary": 367.5,
+    "Speed 1 count": 9,
+    "Speed 2 count": 10,
+    "Speed 3 count": 5,
+    "Speed 4 count": 2,
+    "member count": 26
+  },
+  {
+    "Leader": "ნიკოლოზ თევდორაძე",
+    "Salary": 15,
+    "Speed 1 count": 0,
+    "Speed 2 count": 1,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 1
+  },
+  {
+    "Leader": "ნიკოლოზ მაჭარაშვილი",
+    "Salary": 75,
+    "Speed 1 count": 0,
+    "Speed 2 count": 5,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 5
+  },
+  {
+    "Leader": "ნიკოლოზ ჭიტაძე",
+    "Salary": 265,
+    "Speed 1 count": 2,
+    "Speed 2 count": 11,
+    "Speed 3 count": 3,
+    "Speed 4 count": 1,
+    "member count": 17
+  },
+  {
+    "Leader": "პაატა ცუცქირიძე",
+    "Salary": 15,
+    "Speed 1 count": 2,
+    "Speed 2 count": 0,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 2
+  },
+  {
+    "Leader": "სანდრო ჩაფიძე",
+    "Salary": 110,
+    "Speed 1 count": 0,
+    "Speed 2 count": 6,
+    "Speed 3 count": 1,
+    "Speed 4 count": 0,
+    "member count": 7
+  },
+  {
+    "Leader": "სოფია გორგაძე",
+    "Salary": 0,
+    "Speed 1 count": 0,
+    "Speed 2 count": 0,
+    "Speed 3 count": 0,
+    "Speed 4 count": 0,
+    "member count": 0
+  },
+  {
+    "Leader": "უჩა ხუბერიშვილი",
+    "Salary": 310,
+    "Speed 1 count": 6,
+    "Speed 2 count": 12,
+    "Speed 3 count": 3,
+    "Speed 4 count": 1,
+    "member count": 22
+  }
+]
