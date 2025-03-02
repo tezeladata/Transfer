@@ -3,96 +3,149 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 
+// utils
+import readFile from "./utils/readFile.js";
+import writeFile from "./utils/writeFile.js"
+
 // Server
 const app = express();
 
 // Port
 dotenv.config();
-const PORT = process.env.PORT
+const PORT = process.env.PORT;
+
+// Dbs
+const DATA_FILE = process.env.DATA_FILE;
+const LOGS_FILE = process.env.LOGS_FILE;
 
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
-app.use((req, res, next) => {
-    console.log(`Request url is ${req.url}, request method is ${req.method}`);
-    next();
-});
-app.use((req, res, next) => {
-    console.log(`All headers are: ${req.rawHeaders}`);
-    next();
-})
-app.use((req, res, next) => {
-    console.log(req.errored === null ? "Error not occured": `Error occured ${req.errored}`);
+app.use(async (req, res, next) => {
+    console.log("\nLogger middleware\n")
+    console.log(`Method: ${req.method}\nPath: ${req.path}\nURL: ${req.url}`);
+    for (let key in req.query){
+        console.log(`Query key: ${key}, Query value: ${req.query[key]}`)
+    };
+    console.log("\nInformation of request logged in console!\n");
+
+    // Add log to logs file
+    const data = [["Method", req.method], ["Path", req.path], ["Url", req.url], ["Query", req.query], ["Params", req.params]];
+    const prev = await readFile(LOGS_FILE);
+    prev.push(data)
+    await writeFile(LOGS_FILE, JSON.stringify(prev));
+
+    // To next middleware
     next();
 })
 
-// Db
-let products = [
-    {id: 1, name: "Apple", price: 1.5},
-    {id: 2, name: "Mango", price: 2.5},
-    {id: 3, name: "Banana", price: 2},
-    {id: 4, name: "Kiwi", price: 4}
-]
 
 // Routes
-app.get("/", (req, res) => {
-    res.json([
-        {name: "David", surname: "Tezelashvili"},
-        {name: "Andria", surname: "Tezelashvili"},
-        {name: "Luka", surname: "Tskhvaradze"},
-        {name: "Vano", surname: "Motiashvili"}
-    ])
-})
 
-app.get("/products", (req, res) => {
-    res.status(200).json(products)
-})
+// Get all tasks
+app.get("/tasks", async (req, res) => {
+    const {completed} = req.query;
+    try {
+        let data = await readFile(DATA_FILE);
 
-app.post("/products", (req, res) => {
-    const {name, price} = req.body;
+        if (completed === "true"){
+            data = data.filter(item => item.completed === "true")
+        } else if (completed === "false"){
+            data = data.filter(item => item.completed === "false")
+        }
 
-    if (!name || !price) {
-        return res.status(404).send("Not enough info")
+        res.status(200).json(data)
+    } catch(e) {
+        return res.status(404).send(e)
     }
-
-    const newProduct = {id: products.length + 1, name, price};
-
-    products.push(newProduct);
-
-    console.log(products)
-    res.status(200).json(products)
 })
 
-app.put("/products", (req, res) => {
-    const {id, name, price} = req.body;
-    const productId = products.findIndex(item => item.id === id && item.name === name);
+// Get task by ID
+app.get("/tasks/:id", async (req, res) => {
+    const id = parseInt(req.params.id);
+    try {
+        const data = await readFile(DATA_FILE);
 
-    if (!id || !name || !price) {
-        return res.status(400).send("Not enough info")
+        const item = data.filter(item => item.id === id);
+
+        if (item.length === 0){
+            return res.status(404).send(`Item not found by ID number ${id}`)
+        }
+
+        res.status(200).json(item);
+    } catch(e) {
+        return res.status(400).send(e)
     }
-
-    products[productId] = {id, name, price};
-
-    if (productId === -1) {
-        return res.status(404).send("Product not found");
-    }
-
-    console.log(products);
-    res.status(200).json(products);
 })
 
-app.delete("/products/:id", (req, res) => {
+// Add new task
+app.post("/tasks", async (req, res) => {
+    const {task, duration, completed} = req.body;
+
+    try {
+        const data = await readFile(DATA_FILE);
+
+        if (!task || !duration || !completed){
+            return res.status(400).send("Not enough information")
+        }
+
+        data.push({"id": data.length + 1, task, duration, completed});
+        await writeFile(DATA_FILE, JSON.stringify(data));
+
+        return res.status(200).json(data);
+    } catch(e) {
+        return res.status(400).send(e)
+    }
+})
+
+// Edit task by ID
+app.put("/tasks/:id", async (req, res) => {
+    const id = parseInt(req.params.id);
+    const {task, duration, completed} = req.body;
+
+    try {
+        const data = await readFile(DATA_FILE);
+
+        if (!task || !duration || !completed) {
+            return res.status(400).send("Not enough information")
+        }
+        
+        const ind = data.findIndex(item => item.id === id);
+
+        if (ind === -1) {
+            return res.status(404).send(`Item not found by ID number ${id}`)
+        }
+
+        data[ind] = {id, task, duration, completed};
+        await writeFile(DATA_FILE, JSON.stringify(data));
+
+        return res.status(200).json(data)
+    } catch(e) {
+        res.status(400).send(e)
+    }
+})
+
+// Delete task by ID
+app.delete("/tasks/:id", async (req, res) => {
     const id = parseInt(req.params.id);
 
-    if (isNaN(id) || id < 1 || id > products.length) {
-        return res.status(400).send("Wrong id")
+    try {
+        let data = await readFile(DATA_FILE);
+        
+        const ind = data.findIndex(item => item.id == id);
+
+        if (ind === -1) {
+            return res.status(404).send(`Item not found by ID number ${id}`)
+        }
+
+        data = data.filter(item => item.id !== id);
+        await writeFile(DATA_FILE, JSON.stringify(data));
+
+        return res.status(200).json(data);
+    } catch(e) {
+        return res.status(400).send(e);
     }
-
-    products = products.filter(item => item.id !== id);
-
-    console.log(products);
-    res.status(200).json(products);
 })
 
-// Run server
-app.listen(PORT, () => console.log(`Server is runnin on port ${PORT}`))
+// Start server
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
