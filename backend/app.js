@@ -7,7 +7,7 @@ import { tasksRouter } from "./Routers/tasks.route.js";
 // Server and extra
 const app = express();
 const PORT = 3000;
-const TASKS_FILE = "./Databases/tasks.json";
+export const TASKS_FILE = "./Databases/tasks.json";
 
 // Middleware
 app.use(cors());

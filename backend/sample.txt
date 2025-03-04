@@ -21,6 +21,6 @@
             "task name": "Build UI for onboarding flow",
             "name": "Talk to potential customers about our proposed solution and ask for fair price expectancy",
             "status": "Not completed"
-        },
+        }
     ]
 }
