@@ -1,7 +1,0 @@
-{
-    "id": 0,
-    "title": "Clean room",
-    "description": "clean room in 15 minutes",
-    "status": "in-progress",
-    "priority": "high"
-}
