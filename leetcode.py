@@ -156,3 +156,165 @@ class Solution(object):
 class Solution(object):
     def containsDuplicate(self, nums):
         return len(set(nums)) < len(nums)
+
+# Climbing stairs
+class Solution(object):
+    def climbStairs(self, n):
+        if n <= 2: return n
+
+        first, second = 1, 2
+        for _ in range(3, n+1):
+            third = first + second
+            first = second
+            second = third
+        
+        return second
+
+# Power of two
+class Solution(object):
+    def isPowerOfTwo(self, n):
+        if n < 0: return False
+        
+        for i in range(int(n**0.5)+2):
+            if 2**i == n: return True
+        return False
+    
+# Valid anagram
+class Solution(object):
+    def isAnagram(self, s, t):
+        def dictize(st): return sorted([[i, st.count(i)] for i in set(st)])
+
+        return dictize(s) == dictize(t)
+    
+# Add digits
+class Solution(object):
+    def addDigits(self, num):
+        def change(num): return sum([int(i) for i in str(num)])
+
+        while len(str(num)) > 1: num = change(num)
+
+        return num
+
+# Ugly number
+class Solution(object):
+    def isUgly(self, n):
+        if n <= 0:
+            return False
+        for p in [2, 3, 5]:
+            while n % p == 0:
+                n //= p
+        return n == 1
+    
+# Missing number
+class Solution(object):
+    def missingNumber(self, nums):
+        res = [i for i in range(max(nums)) if i not in nums]
+
+        if len(res) == 0: return max(nums)+1
+        return res[0]
+
+# Move zeroes
+class Solution(object):
+    def moveZeroes(self, nums):
+        insert_pos = 0
+        for num in nums:
+            if num != 0:
+                nums[insert_pos] = num
+                insert_pos += 1
+        for i in range(insert_pos, len(nums)):
+            nums[i] = 0
+
+# Power of three
+class Solution(object):
+    def isPowerOfThree(self, n):
+        if n < 0: return False
+        
+        for i in range(int(n**0.3)+2):
+            if 3**i == n: return True
+        return False
+
+# Counting bits
+class Solution(object):
+    def countBits(self, n):
+        return [bin(i)[2:].count("1") for i in range(n+1)]
+
+# Reverse string
+class Solution(object):
+    def reverseString(self, s):
+        new_ls = s[::-1]
+
+        for i in range(len(s)): s[i] = new_ls[i]
+
+# Reverse vowels of string
+class Solution(object):
+    def reverseVowels(self, s):
+        vows = "aeiouAEIOU"
+        new_ls, all_vows = [], []
+
+        for i in s:
+            if i not in vows: new_ls.append(i)
+            else: 
+                new_ls.append("_")
+                all_vows.append(i)
+        
+        all_vows = all_vows[::-1]
+
+        for i in range(len(new_ls)):
+            if new_ls[i] == "_":
+                new_ls[i] = all_vows[0]
+                all_vows = all_vows[1:]
+        
+        return "".join(new_ls)
+
+# Intersection of two arrays
+class Solution(object):
+    def intersection(self, nums1, nums2):
+        return [i for i in set(nums1) if i in nums2]
+
+# Intersection of two arrays II
+class Solution(object):
+    def intersect(self, nums1, nums2):
+        new_ls = [i for i in set(nums1) if i in nums2]
+        res = [[x, min(nums1.count(x), nums2.count(x))] for x in new_ls]
+        fin = []
+
+        for i in res:
+            for _ in range(i[1]):
+                fin.append(i[0])
+
+        return fin
+
+# Valid perfect square
+class Solution(object):
+    def isPerfectSquare(self, num):
+        return int(num**0.5)*int(num**0.5) == num
+
+# First unique character in a string
+class Solution(object):
+    def firstUniqChar(self, s):
+        count = {}
+        
+        for char in s:
+            if char in count:
+                count[char] += 1
+            else:
+                count[char] = 1
+        
+        for i in range(len(s)):
+            if count[s[i]] == 1:
+                return i
+        
+        return -1
+
+# Find the difference
+class Solution(object):
+    def findTheDifference(self, s, t):
+        count = {}
+        
+        for char in s:
+            count[char] = count.get(char, 0) + 1
+        
+        for char in t:
+            if char not in count or count[char] == 0:
+                return char
+            count[char] -= 1
