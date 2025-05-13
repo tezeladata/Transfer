@@ -106,3 +106,4 @@ class Solution(object):
             result += multiple
 
         return -result if neg else result
+
