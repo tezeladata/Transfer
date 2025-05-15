@@ -107,3 +107,89 @@ class Solution(object):
 
         return -result if neg else result
 
+# Search in rotated sorted array
+class Solution(object):
+    def search(self, nums, target):
+        return nums.index(target) if target in nums else -1
+
+# Find first and last position of element in sorted array
+class Solution(object):
+    def searchRange(self, nums, target):
+        res = [i for i in range(len(nums)) if nums[i] == target]
+        
+        if res == []: return [-1, -1]
+        elif len(res) == 1: return [res[0], res[0]]
+        elif len(res) > 2: return [res[0], res[-1]]
+        return res
+
+# Count and say
+class Solution(object):
+    def countAndSay(self, n):
+        def gen_rle(s):
+            res = ""
+            count = 1
+
+            for i in range(1, len(s)):
+                if s[i] == s[i-1]:
+                    count += 1
+                else:
+                    res += "{}{}".format(count, s[i-1])
+                    count = 1
+            res += "{}{}".format(count, s[-1])
+            return res
+
+        res = "1"
+        for _ in range(n-1): res = gen_rle(res)
+        return res
+
+# Multiply strings
+class Solution(object):
+    def multiply(self, num1, num2):
+        return str(int(num1)*int(num2))
+
+# Permutations
+class Solution(object):
+    def permute(self, nums):
+        if len(nums) == 0:
+            return [[]]
+
+        perms = []
+        for i in range(len(nums)):
+            rest = nums[:i] + nums[i+1:] 
+            for p in self.permute(rest): perms.append([nums[i]] + p)
+        return perms
+
+# Group anagrams
+class Solution(object):
+    def groupAnagrams(self, strs):
+        groups = {}
+        for word in strs:
+            key = ''.join(sorted(word))
+            if key not in groups:
+                groups[key] = []
+            groups[key].append(word)
+        return list(groups.values())
+
+# Pow(x, n)
+class Solution(object):
+    def myPow(self, x, n):
+        return x**n
+
+# Merge intervals
+class Solution(object):
+    def merge(self, intervals):
+        if not intervals: return []
+
+        intervals.sort(key=lambda x: x[0])
+        res = []
+        last = intervals[0]
+
+        for i in range(1, len(intervals)):
+            if last[1] >= intervals[i][0]: 
+                last = [last[0], max(last[1], intervals[i][1])]
+            else:
+                res.append(last)
+                last = intervals[i]
+
+        res.append(last) 
+        return res
