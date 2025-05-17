@@ -1,195 +1,111 @@
-# Longest substring without repeating characters
+# Valid palindrome II
 class Solution(object):
-    def lengthOfLongestSubstring(self, s):
-        char_set = set()
-        left = 0
-        max_len = 0
-
-        for right in range(len(s)):
-            while s[right] in char_set:
-                char_set.remove(s[left])
+    def validPalindrome(self, s):
+        def is_palindrome_range(left, right):
+            while left < right:
+                if s[left] != s[right]:
+                    return False
                 left += 1
-            char_set.add(s[right])
-            max_len = max(max_len, right - left + 1)
+                right -= 1
+            return True
 
-        return max_len
-
-# Longest palindromic substring
-class Solution(object):
-    def longestPalindrome(self, s):
-        res = ""
-        for i in range(len(s)):
-            for x in range(i+1, len(s)+1):
-                n = s[i:x]
-                if n == n[::-1] and len(n) > len(res): res = n
-        
-        return res
-    
-# Reverse integer
-class Solution(object):
-    def reverse(self, x):
-        n = int(str(x)[::-1]) if x >= 0 else int("-" + (str(x)[1:])[::-1])
-        return 0 if n < -2**31 or n > 2**31 - 1 else n
-
-# Container with most water
-class Solution(object):
-    def maxArea(self, height):
-        left = 0
-        right = len(height) - 1
-        res = 0
+        left, right = 0, len(s) - 1
 
         while left < right:
-            h = min(height[left], height[right])
-            w = right - left
-            res = max(res, h * w)
+            if s[left] != s[right]:
+                return is_palindrome_range(left+1, right) or is_palindrome_range(left, right-1)
+            left += 1
+            right -= 1
 
-            if height[left] < height[right]:
-                left += 1
+        return True
+
+# Count binary substrings
+class Solution(object):
+    def countBinarySubstrings(self, s):
+        prev, curr = 0, 1
+        count = 0
+        
+        for i in range(1, len(s)):
+            if s[i] == s[i-1]:
+                curr += 1
             else:
-                right -= 1
+                count += min(prev, curr)
+                prev = curr
+                curr = 1
+                
+        return count + min(prev, curr)
 
-        return res
-
-# Letter combinations of a phone number
+# Degree of an array
 class Solution(object):
-    def letterCombinations(self, digits):
-        if digits == "": return []
+    def findShortestSubArray(self, nums):
+        left = {}
+        right = {}
+        count = {}
+        
+        for i in range(len(nums)):
+            num = nums[i]
+            if num not in left:
+                left[num] = i
+            right[num] = i
+            if num not in count:
+                count[num] = 0
+            count[num] += 1
+        
+        degree = max(count.values())
+        min_len = len(nums)
+        
+        for num in count:
+            if count[num] == degree:
+                length = right[num] - left[num] + 1
+                if length < min_len:
+                    min_len = length
+        
+        return min_len
 
-        corres = [["a", "b", "c"], ["d", "e", "f"], ["g", "h", "i"], ["j", "k", "l"], ["m", "n", "o"], ["p", "q", "r", "s"], ["t", "u", "v"], ["w", "x", "y", "z"]]
-        res = []
-
-        if len(digits) == 1: return corres[int(digits)-2]
-        elif len(digits) == 2:
-            first = corres[int(digits[0])-2]
-            second = corres[int(digits[1])-2]
-            for i in first:
-                for x in second:
-                    res.append(i+x)
-            return res
-        elif len(digits) == 3:
-            first = corres[int(digits[0])-2]
-            second = corres[int(digits[1])-2]
-            third = corres[int(digits[2])-2]
-            for i in first:
-                for x in second:
-                    for z in third:
-                        res.append(i+x+z)
-            return res
-        elif len(digits) == 4:
-            first = corres[int(digits[0])-2]
-            second = corres[int(digits[1])-2]
-            third = corres[int(digits[2])-2]
-            fourth = corres[int(digits[3])-2]
-            for i in first:
-                for x in second:
-                    for z in third:
-                        for y in fourth:
-                            res.append(i+x+z+y)
-            return res
-
-# Divide two integers
-class Solution(object):
-    def divide(self, dividend, divisor):
-        if dividend == -2**31 and divisor == -1:  return 2**31 - 1
-
-        neg = (dividend < 0) != (divisor < 0)
-
-        dividend, divisor = abs(dividend), abs(divisor)
-        result = 0
-
-        while dividend >= divisor:
-            temp, multiple = divisor, 1
-            while dividend >= (temp << 1):
-                temp <<= 1
-                multiple <<= 1
-            dividend -= temp
-            result += multiple
-
-        return -result if neg else result
-
-# Search in rotated sorted array
+# Binary search
 class Solution(object):
     def search(self, nums, target):
-        return nums.index(target) if target in nums else -1
+        low, high = 0, len(nums)-1
 
-# Find first and last position of element in sorted array
+        while low <= high:
+            mid = low + (high - low) // 2
+            if nums[mid] == target: return mid
+            elif nums[mid] < target: low = mid + 1
+            else: high = mid - 1
+
+        return -1
+
+# To lower case
 class Solution(object):
-    def searchRange(self, nums, target):
-        res = [i for i in range(len(nums)) if nums[i] == target]
-        
-        if res == []: return [-1, -1]
-        elif len(res) == 1: return [res[0], res[0]]
-        elif len(res) > 2: return [res[0], res[-1]]
-        return res
+    def toLowerCase(self, s):
+        return s.lower()
 
-# Count and say
+# Find pivot index
 class Solution(object):
-    def countAndSay(self, n):
-        def gen_rle(s):
-            res = ""
-            count = 1
-
-            for i in range(1, len(s)):
-                if s[i] == s[i-1]:
-                    count += 1
-                else:
-                    res += "{}{}".format(count, s[i-1])
-                    count = 1
-            res += "{}{}".format(count, s[-1])
-            return res
-
-        res = "1"
-        for _ in range(n-1): res = gen_rle(res)
-        return res
-
-# Multiply strings
-class Solution(object):
-    def multiply(self, num1, num2):
-        return str(int(num1)*int(num2))
-
-# Permutations
-class Solution(object):
-    def permute(self, nums):
-        if len(nums) == 0:
-            return [[]]
-
-        perms = []
+    def pivotIndex(self, nums):
         for i in range(len(nums)):
-            rest = nums[:i] + nums[i+1:] 
-            for p in self.permute(rest): perms.append([nums[i]] + p)
-        return perms
+            if sum(nums[:i]) == sum(nums[i+1:]): return i
+        return -1
 
-# Group anagrams
+# Self dividing numbers
 class Solution(object):
-    def groupAnagrams(self, strs):
-        groups = {}
-        for word in strs:
-            key = ''.join(sorted(word))
-            if key not in groups:
-                groups[key] = []
-            groups[key].append(word)
-        return list(groups.values())
+    def selfDividingNumbers(self, left, right):
+        return [i for i in range(left, right+1) if "0" not in str(i) and (lambda n: all(n%int(i)==0 for i in str(n)))(i)]
 
-# Pow(x, n)
+# Find smallest letter greater than target
 class Solution(object):
-    def myPow(self, x, n):
-        return x**n
+    def nextGreatestLetter(self, letters, target):
+        alphabet = "abcdefghijklmnopqrstuvwxyz"
+        all_variants = []
 
-# Merge intervals
+        for i in letters:
+            if alphabet.index(i) - alphabet.index(target) > 0: all_variants.append([i, alphabet.index(i) - alphabet.index(target)])
+        
+        return sorted(all_variants, key = lambda x: x[1])[0][0] if len(all_variants) > 0 else letters[0]
+
+# Largest number at least twice of others
 class Solution(object):
-    def merge(self, intervals):
-        if not intervals: return []
+    def dominantIndex(self, nums):
+        return nums.index(max(nums)) if all(max(nums) >= i*2 for i in [i for i in nums if i!=max(nums)]) else -1
 
-        intervals.sort(key=lambda x: x[0])
-        res = []
-        last = intervals[0]
-
-        for i in range(1, len(intervals)):
-            if last[1] >= intervals[i][0]: 
-                last = [last[0], max(last[1], intervals[i][1])]
-            else:
-                res.append(last)
-                last = intervals[i]
-
-        res.append(last) 
-        return res
+# 
