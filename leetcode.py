@@ -108,4 +108,111 @@ class Solution(object):
     def dominantIndex(self, nums):
         return nums.index(max(nums)) if all(max(nums) >= i*2 for i in [i for i in nums if i!=max(nums)]) else -1
 
-# 
+# Excel sheet column number
+class Solution(object):
+    def titleToNumber(self, columnTitle):
+        res = 0
+        for i in columnTitle: res = res * 26 + (ord(i) - ord('A') + 1)
+        
+        return res
+
+# Ransom note
+class Solution(object):
+    def canConstruct(self, ransomNote, magazine):
+        return all(ransomNote.count(i) <= magazine.count(i) for i in ransomNote)
+
+# Keyboard row
+class Solution(object):
+    def findWords(self, words):
+        def check_exists(word, row):
+            if all(x.lower() in row for x in word): res.append(word)
+
+        first, second, third = "qwertyuiop", "asdfghjkl", "zxcvbnm"
+        res = []
+
+        for i in words:
+            if i.lower()[0] in first: check_exists(i, first)
+            elif i.lower()[0] in second: check_exists(i, second)
+            else: check_exists(i, third)
+        
+        return res
+
+# Longest uncommon subsequence I
+class Solution(object):
+    def findLUSlength(self, a, b):
+        def gen_subsec(word):
+            res = []
+            for i in range(len(word)):
+                for x in range(i+1, len(word)+1):
+                    res.append(word[i:x])
+            return res
+        
+        sub_a = gen_subsec(a)
+        sub_b = gen_subsec(b)
+        uncommon = [i for i in sub_a if i not in sub_b] + [i for i in sub_b if i not in sub_a]
+        uncommon.sort(key=lambda x: len(x))
+        return len(uncommon[-1]) if len(uncommon) > 0 else -1
+
+# Student attendance record I
+class Solution(object):
+    def checkRecord(self, s):
+        return s.count("A") < 2 and "LLL" not in s
+
+# Reverse words in a string III
+class Solution(object):
+    def reverseWords(self, s):
+        return " ".join([i[::-1] for i in s.split(" ")])
+
+# Robot return to origin
+class Solution(object):
+    def judgeCircle(self, moves):
+        return moves.count("U")==moves.count("D") and moves.count("R")==moves.count("L")
+
+# Jewels and stones
+class Solution(object):
+    def numJewelsInStones(self, jewels, stones):
+        return sum([stones.count(i) for i in set(jewels)])
+
+# Rotate string
+class Solution(object):
+    def rotateString(self, s, goal):
+        all_rotates = [s]
+        for i in range(1, len(s)):
+            all_rotates.append(s[i:] + s[:i])
+        
+        return goal in all_rotates
+
+# Unique morse code words
+class Solution(object):
+    def uniqueMorseRepresentations(self, words):
+        morse, alp = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."], "abcdefghijklmnopqrstuvwxyz"
+        res = set()
+
+        for i in words:
+            new_w = ""
+            for x in i:
+                new_w += morse[alp.index(x)]
+            res.add(new_w)
+        
+        return len(res)
+
+# Most common word
+class Solution(object):
+    def mostCommonWord(self, paragraph, banned):
+        for ch in "!?',;.":
+            paragraph = paragraph.replace(ch, ' ')
+        words = paragraph.lower().split()
+        word_count = {}
+        for word in words:
+            if word not in banned:
+                if word in word_count:
+                    word_count[word] += 1
+                else:
+                    word_count[word] = 1
+        max_count = 0
+        result = ''
+        for word in word_count:
+            if word_count[word] > max_count:
+                max_count = word_count[word]
+                result = word
+        return result
