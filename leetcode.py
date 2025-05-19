@@ -216,3 +216,106 @@ class Solution(object):
                 max_count = word_count[word]
                 result = word
         return result
+
+# Merge sorted array
+class Solution(object):
+    def merge(self, nums1, m, nums2, n):
+        left, right = nums1[:m], nums2[:n]
+
+        nums1[:] = left
+        for i in right:
+            nums1.append(i)
+        nums1.sort()
+
+# Pascal's triangle II
+class Solution(object):
+    def getRow(self, rowIndex):
+        a = []
+
+        for i in range(rowIndex+1):
+            a.append([])
+            a[i].append(1)
+            for j in range(1, i):
+                a[i].append(a[i-1][j-1] + a[i-1][j])
+            if rowIndex != 0:
+                a[i].append(1)
+        
+        return a[-1]
+
+# Contains duplicate II
+class Solution(object):
+    def containsNearbyDuplicate(self, nums, k):
+        num_indices = {}
+
+        for i, num in enumerate(nums):
+            if num in num_indices and i - num_indices[num] <= k:
+                return True
+            num_indices[num] = i
+
+        return False
+
+# Island perimeter
+class Solution(object):
+    def islandPerimeter(self, grid):
+        res = 0
+
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j] == 1:
+                    res += 4
+                    if i > 0 and grid[i-1][j] == 1:  # up
+                        res -= 1
+                    if i < len(grid) - 1 and grid[i+1][j] == 1:  # down
+                        res -= 1
+                    if j > 0 and grid[i][j-1] == 1:  # left
+                        res -= 1
+                    if j < len(grid[0]) - 1 and grid[i][j+1] == 1:  # right
+                        res -= 1
+        return res
+
+# Next greater element I
+class Solution(object):
+    def nextGreaterElement(self, nums1, nums2):
+        ans = []
+
+        for num in nums1:
+            if num in nums2:
+                ind = nums2.index(num)
+                added = False
+
+                for i in nums2[ind+1:]:
+                    if i > num:
+                        ans.append(i)
+                        added = True
+                        break
+                
+                if not added: ans.append(-1)
+        
+        return ans
+
+# Teemo attacking
+class Solution(object):
+    def findPoisonedDuration(self, timeSeries, duration):
+        if not timeSeries:
+            return 0
+        
+        total = 0
+        for i in range(len(timeSeries) - 1):
+            total += min(timeSeries[i+1] - timeSeries[i], duration)
+        total += duration 
+        return total
+
+# Relative ranks
+class Solution(object):
+    def findRelativeRanks(self, score):
+        sr_scores = sorted(score, reverse=True)
+        res = []
+
+        for i in score:
+            if i not in sr_scores[:3]: res.append(str(sr_scores.index(i)+1))
+            else:
+                if i == max(score): res.append("Gold Medal")
+                elif i == sr_scores[1]: res.append("Silver Medal")
+                else: res.append("Bronze Medal")
+        
+        return res
