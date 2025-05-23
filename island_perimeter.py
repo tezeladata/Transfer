@@ -1,4 +1,4 @@
-def islandPerimeter(self, grid):
+def islandPerimeter(grid):
     res = 0
 
     for i in range(len(grid)):

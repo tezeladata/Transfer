@@ -1,4 +1,4 @@
-def transpose(self, matrix):
+def transpose(matrix):
     res = []
     for i in range(len(matrix[0])): 
         new_i = []
