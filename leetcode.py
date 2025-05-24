@@ -304,3 +304,4 @@ class Solution(object):
             max_right = max(max_right, arr[i])
             arr[i] = new_val
         return arr
+
