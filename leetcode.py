@@ -109,3 +109,92 @@ class Solution(object):
                 num2 += digits[i]
         
         return int(num1) + int(num2)
+
+# K items with the maximum sum
+class Solution(object):
+    def kItemsWithMaximumSum(self, numOnes, numZeros, numNegOnes, k):
+        all_nums = sorted([1 for _ in range(numOnes)] + [0 for _ in range(numZeros)] + [-1 for _ in range(numNegOnes)])
+        res = 0
+
+        while k > 0:
+            res += all_nums[-1]
+            all_nums = all_nums[:-1]
+            k -= 1
+        
+        return res
+
+# Calculate delayed arrival time
+class Solution(object):
+    def findDelayedArrivalTime(self, arrivalTime, delayedTime):
+        return arrivalTime + delayedTime if arrivalTime + delayedTime < 24 else (arrivalTime + delayedTime)%24
+
+# Sum multiples
+class Solution(object):
+    def sumOfMultiples(self, n):
+        return sum([i for i in range(1, n+1) if i%3==0 or i%5==0 or i%7==0])
+
+# Find the maximum achievable number
+class Solution(object):
+    def theMaximumAchievableX(self, num, t):
+        return num + 2*t
+
+# Prime number of set bits in binary representation
+class Solution(object):
+    def countPrimeSetBits(self, left, right):
+        def is_prime(num):
+            if num <= 1: return False
+            for i in range(2, int(num**0.5)+1):
+                if num%i==0: return False
+            return True
+        
+        res = 0
+        for i in range(left, right+1):
+            if is_prime(bin(i).count("1")): res += 1
+        
+        return res
+
+# Check if the number is fascinating
+class Solution(object):
+    def isFascinating(self, n):
+        new_num = str(n)+str(n*2)+str(n*3)
+        return len(new_num) == len(set(new_num)) and "0" not in new_num
+
+# Number of beautiful pairs
+class Solution(object):
+    def countBeautifulPairs(self, nums):
+        def gcd(x, y):
+            while y:
+                x, y = y, x % y
+            return x
+        
+        count = 0
+        for i in range(len(nums)):
+            first_digit = int(str(nums[i])[0])
+            for j in range(i+1, len(nums)):
+                last_digit = nums[j] % 10
+                if gcd(first_digit, last_digit) == 1:
+                    count += 1
+        return count
+
+# Maximum odd binary number
+class Solution(object):
+    def maximumOddBinaryNumber(self, s):
+        if s.count("1") == 1: return "0"*s.count("0")+"1"
+        else:
+            return "1"*(s.count("1")-1)+"0"*s.count("0")+"1"
+
+# Count symmetric strings
+class Solution(object):
+    def countSymmetricIntegers(self, low, high):
+        res = 0
+
+        for i in range(low, high + 1):
+            s = str(i)
+            if len(s) % 2 == 0:
+                mid = len(s) // 2
+                left_sum = sum(int(d) for d in s[:mid])
+                right_sum = sum(int(d) for d in s[mid:])
+                if left_sum == right_sum:
+                    res += 1
+
+        return res
