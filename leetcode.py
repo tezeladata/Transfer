@@ -198,3 +198,109 @@ class Solution(object):
                     res += 1
 
         return res
+
+# Divisible and non-divisible sums difference
+class Solution(object):
+    def differenceOfSums(self, n, m):
+        return sum([i for i in range(1,n+1) if i%m!=0]) - sum([i for i in range(1,n+1) if i%m==0])
+
+# Greatest common divisor of strings
+class Solution(object):
+    def gcdOfStrings(self, str1, str2):
+        def gcd(a, b):
+            while b:
+                a, b = b, a % b
+            return a
+
+        if str1 + str2 != str2 + str1:
+            return ""
+
+        gcd_len = gcd(len(str1), len(str2))
+        return str1[:gcd_len]
+
+# Distribute candies among children I
+class Solution(object):
+    def distributeCandies(self, n, limit):
+        res = []
+
+        for i in range(limit+1):
+            for x in range(limit+1):
+                for z in range(limit+1):
+                    new_ls = [i, x, z]
+                    if sum(new_ls)==n and all(y<=limit for y in new_ls):
+                        res.append(new_ls)
+        
+        return len(res)
+
+# Find missing and repeated values
+class Solution(object):
+    def findMissingAndRepeatedValues(self, grid):
+        all_nums = []
+        for i in grid:
+            for x in i: all_nums.append(x)
+        
+        f = [i for i in all_nums if all_nums.count(i)==2][0]
+        s = [i for i in range(1, max(all_nums)+1) if i not in all_nums]
+        return [f, s[0]] if s!=[] else [f, max(all_nums)+1]
+
+# N-th tribonacci number
+class Solution(object):
+    def tribonacci(self, n):
+        if n==0: return 0
+        res = [0, 1, 1]
+        while len(res)<n+1:
+            res.append(sum(res[-3:]))
+        return res[-1]
+
+# Type of triangle
+class Solution(object):
+    def triangleType(self, nums):
+        if nums[0]+nums[1] <= nums[2] or nums[1]+nums[2] <= nums[0] or nums[0]+nums[2] <= nums[1]: return "none"
+        if all(i==nums[0] for i in nums): return "equilateral"
+        if sorted(nums)[0]==sorted(nums)[1] or sorted(nums)[1]==sorted(nums)[2]: return "isosceles"
+        if nums[0]!=nums[1] and nums[1]!=nums[2]: return "scalene"
+
+# Number of days between two dates
+from datetime import datetime
+
+class Solution(object):
+    def daysBetweenDates(self, date1, date2):
+        d1 = datetime.strptime(date1, "%Y-%m-%d")
+        d2 = datetime.strptime(date2, "%Y-%m-%d")
+        return abs((d1 - d2).days)
+
+# Find the sum of encrypted integers
+class Solution(object):
+    def sumOfEncryptedInt(self, nums):
+        def enc(n):
+            return int(str(max([int(i) for i in str(n)]))*len(str(n)))
+
+        res = 0
+        for i in nums:
+            res += enc(i)
+        return res
+
+# Harshad number
+class Solution(object):
+    def sumOfTheDigitsOfHarshadNumber(self, x):
+        return sum([int(i) for i in str(x)]) if x%sum([int(i) for i in str(x)])==0 else -1
+
+# Check if it is a straight line
+class Solution(object):
+    def checkStraightLine(self, coordinates):
+        x0, y0 = coordinates[0]
+        x1, y1 = coordinates[1]
+        for i in range(2, len(coordinates)):
+            xi, yi = coordinates[i]
+            if (x1 - x0) * (yi - y0) != (y1 - y0) * (xi - x0):
+                return False
+        return True
+
+# Subtract the product and sum of digits of an integer
+class Solution(object):
+    def subtractProductAndSum(self, n):
+        prod = 1
+        for i in range(len(str(n))):
+            prod *= int(str(n)[i])
+
+        return prod - sum([int(i) for i in str(n)])
