@@ -304,3 +304,103 @@ class Solution(object):
             prod *= int(str(n)[i])
 
         return prod - sum([int(i) for i in str(n)])
+
+# Find numbers with even number of digits
+class Solution(object):
+    def findNumbers(self, nums):
+        return len([i for i in nums if len(str(i))%2==0])
+
+# Find N unique integers sum up to zero
+class Solution(object):
+    def sumZero(self, n):
+        if n%2==1:
+            res = [0] 
+        else:
+            res = [-1, 1]
+
+        while len(res)<n:
+            res.append(max(res)+1)
+            res.append(max(res)*-1)
+
+        return res
+
+# Find minimum operations to make all elements divisible by three
+class Solution(object):
+    def minimumOperations(self, nums):
+        return len([i for i in nums if i%3!=0])
+
+# Number of steps to reduce a number to zero
+class Solution(object):
+    def numberOfSteps(self, num):
+        res = 0
+
+        while num!=0:
+            if num%2 == 0: num //= 2
+            else: num -= 1
+
+            res += 1
+        
+        return res
+
+# Maximum 69 number
+class Solution(object):
+    def maximum69Number (self, num):
+        if all(i=="9" for i in str(num)): return num
+
+        ind = str(num).index("6")
+        return int(str(num)[:ind] + "9" + str(num)[ind+1:])
+
+# Find if digit game can be won
+class Solution(object):
+    def canAliceWin(self, nums):
+        return sum([i for i in nums if len(str(i))==1]) > sum([i for i in nums if len(str(i))==2]) or sum([i for i in nums if len(str(i))==2]) > sum([i for i in nums if len(str(i))==1])
+
+# Count largest group
+class Solution(object):
+    def countLargestGroup(self, n):
+        dig_sum = lambda x: sum([int(i) for i in str(x)])
+
+        all_groups = {}
+
+        for i in range(1, n+1):
+            dig = dig_sum(i)
+            if dig in all_groups.keys():
+                all_groups[dig] = all_groups[dig]+[i]
+            else:
+                all_groups[dig] = [i]
+        
+        max_sz = max(len(i) for i in all_groups.values())
+        return len([i for i in all_groups.values() if len(i)==max_sz])
+
+# Final array state after K multiplication operations I
+class Solution(object):
+    def getFinalState(self, nums, k, multiplier):
+        for i in range(k):
+            ind = nums.index(min(nums))
+            nums[ind] = nums[ind]*multiplier
+        return nums
+
+# Convert date to binary
+class Solution(object):
+    def convertDateToBinary(self, date):
+        return "-".join([bin(int(i))[2:] for i in date.split("-")])
+
+# Find the key of the numbers
+class Solution(object):
+    def generateKey(self, num1, num2, num3):
+        all_nums = [num1, num2, num3]
+        max_len = max(len(str(i)) for i in all_nums)
+
+        for i in range(len(all_nums)):
+            num_str = str(all_nums[i])
+            if len(num_str) != max_len:
+                padding = "0" * (max_len - len(num_str))
+                all_nums[i] = padding + num_str
+            else:
+                all_nums[i] = num_str
+
+        res = "".join(
+            str(min(int(all_nums[0][i]), int(all_nums[1][i]), int(all_nums[2][i])))
+            for i in range(max_len)
+        )
+        return int(res)
