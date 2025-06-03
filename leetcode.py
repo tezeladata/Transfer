@@ -167,3 +167,4 @@ class Solution(object):
         
         all_boxes = [i for i in all_boxes if i!=[]]
         return sum(sorted(all_boxes, key=lambda x: sum(x))[-1])
+
