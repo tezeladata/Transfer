@@ -168,3 +168,80 @@ class Solution(object):
         all_boxes = [i for i in all_boxes if i!=[]]
         return sum(sorted(all_boxes, key=lambda x: sum(x))[-1])
 
+# Minimum operations to make array sum divisible by K
+class Solution(object):
+    def minOperations(self, nums, k):
+        return sum(nums)%k
+
+# Maximum containers on a ship
+class Solution(object):
+    def maxContainers(self, n, w, maxWeight):
+        all_weights = [i*w for i in range(1,n**2+1)]
+        return len([i for i in all_weights if i <= maxWeight])
+
+# The two sneaky numbers of digitville
+class Solution(object):
+    def getSneakyNumbers(self, nums):
+        return list(set([i for i in nums if nums.count(i)>1]))
+
+# Check if two chessboard squares have the same color
+class Solution(object):
+    def checkTwoChessboards(self, coordinate1, coordinate2):
+        odd = "aceg"
+        even = "bdfh"
+
+        if coordinate1[0] in odd and coordinate2[0] in odd:
+            if int(coordinate1[1])%2==0 and int(coordinate2[1])%2==0: return True
+            elif int(coordinate1[1])%2==1 and int(coordinate2[1])%2==1: return True
+            return False
+        elif coordinate1[0] in even and coordinate2[0] in even:
+            if int(coordinate1[1])%2==0 and int(coordinate2[1])%2==0: return True
+            elif int(coordinate1[1])%2==1 and int(coordinate2[1])%2==1: return True
+            return False
+        else:
+            if (int(coordinate1[1])+int(coordinate2[1]))%2==1: return True
+            return False
+
+# Find the child who has the ball after K seconds
+class Solution(object):
+    def numberOfChild(self, n, k):
+        direction, next_child = 1, 0
+
+        for _ in range(k):
+            next_child += direction
+            if next_child == n - 1:
+                direction = -1  
+            elif next_child == 0:
+                direction = 1 
+        
+        return next_child
+
+# Count distinct numbers on board
+class Solution(object):
+    def distinctIntegers(self, n):
+        res = [n]
+
+        for i in range(n):
+            for num in res:
+                for x in range(1,num):
+                    if x not in res and num%x==1: res.append(x)       
+        return len(res)
+
+# Minimum cuts to divide a circle
+class Solution(object):
+    def numberOfCuts(self, n):
+        if n==1: return 0
+        return n//2 if n%2==0 else n
+
+# Find the K-beauty of a number
+class Solution(object):
+    def divisorSubstrings(self, num, k):
+        all_subs = []
+
+        for i in range(len(str(num))):
+            for x in range(i+1, len(str(num))+1):
+                new_sub = str(num)[i:x]
+                if len(new_sub) == k: all_subs.append(int(new_sub))
+        
+        return len([i for i in all_subs if i!=0 and num%i==0])
+
