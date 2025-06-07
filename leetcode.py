@@ -101,3 +101,101 @@ class Solution(object):
                 count += 1
                 
         return count
+
+# String matching in an array
+class Solution(object):
+    def stringMatching(self, words):
+        res = []
+
+        for i in range(len(words)):
+            word = words[i]
+            rem = words[:i] + words[i+1:]
+
+            for x in rem:
+                if word in x: res.append(word)
+        
+        return list(set(res))
+
+# Maximum score after splitting a string
+class Solution(object):
+    def maxScore(self, s):
+        res = -1
+
+        for i in range(1, len(s)):
+            new_score = s[:i].count("0") + s[i:].count("1")
+            if new_score > res: res = new_score
+        
+        return res
+
+# Destination city
+class Solution(object):
+    def destCity(self, paths):
+        start_cities = set()
+
+        for path in paths: start_cities.add(path[0])
+
+        for path in paths:
+            if path[1] not in start_cities:
+                return path[1]
+
+# Check if word occurs as a prefix of any word in a sentence
+class Solution(object):
+    def isPrefixOfWord(self, sentence, searchWord):
+        res = [i for i in range(len(sentence.split(" "))) if sentence.split(" ")[i][:len(searchWord)]==searchWord]
+        return res[0]+1 if res else -1
+
+# Shuffle string
+class Solution(object):
+    def restoreString(self, s, indices):
+        res = ["_" for _ in range(len(indices))]
+        for i in range(len(indices)):
+            res[indices[i]] = s[i]
+        
+        return "".join(res)
+
+# Make the string great
+class Solution(object):
+    def makeGood(self, s):
+        def is_good(st):
+            for i in range(len(st)-1):
+                if (st[i].islower() and st[i+1].isupper() and st[i].upper() == st[i+1]) or (st[i].isupper() and st[i+1].islower() and st[i].lower() == st[i+1]):
+                    return st[:i]+st[i+2:]
+            return True
+        
+        while is_good(s)!=True:
+            s=is_good(s)
+        
+        return s
+
+# Crawler log folder
+class Solution(object):
+    def minOperations(self, logs):
+        depth = 0
+        for i in logs:
+            if i.split("/")[0] not in "..":
+                depth += 1
+            if i.split("/")[0] == ".." and depth != 0:
+                depth -= 1
+        
+        return depth if depth >= 0 else 0
+
+# Maximum nesting depth of parentheses
+class Solution(object):
+    def maxDepth(self, s):
+        depths = []
+        cur_depth = 0
+
+        for i in s:
+            if i == "(":
+                cur_depth += 1
+                depths.append(cur_depth)
+            elif i == ")":
+                cur_depth -= 1
+                depths.append(cur_depth)
+        
+        return max(depths) if depths else 0
+
+# Check if two strings are equivalent
+class Solution(object):
+    def arrayStringsAreEqual(self, word1, word2):
+        return "".join(word1)=="".join(word2)
