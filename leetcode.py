@@ -102,3 +102,95 @@ class Solution(object):
             res += sorted([x for x in nums if nums.count(x) == freq], reverse=True)
         return res
 
+# Remove duplicates from sorted array
+class Solution(object):
+    def removeDuplicates(self, nums):
+        if not nums:
+            return 0
+        
+        k=1
+        for i in range(1, len(nums)):
+            if nums[i] != nums[i-1]:
+                nums[k] = nums[i]
+                k += 1
+        
+        return k
+
+# Baseball game
+class Solution(object):
+    def calPoints(self, operations):
+        scores = []
+        for op in operations:
+            if op.lstrip('-').isdigit():
+                scores.append(int(op))
+            elif op == "+":
+                scores.append(scores[-1] + scores[-2])
+            elif op == "D":
+                scores.append(2 * scores[-1])
+            elif op == "C":
+                scores.pop()
+        return sum(scores)
+
+# Number of lines to write string
+class Solution(object):
+    def numberOfLines(self, widths, s):
+        all_lines = []
+        cur_line, l_cur_line = "", 0
+
+        get_line_w = lambda x: sum([widths[ord(i) - ord('a')] for i in x])
+
+        for i in s:
+            w = widths[ord(i) - ord('a')]
+            if l_cur_line + w <= 100:
+                cur_line += i
+                l_cur_line += w
+            else:
+                all_lines.append(cur_line)
+                cur_line = i
+                l_cur_line = w
+        all_lines.append(cur_line)
+
+        return [len(all_lines), get_line_w(all_lines[-1])]
+
+# Minimum absolute difference
+class Solution(object):
+    def minimumAbsDifference(self, arr):
+        arr.sort()
+        min_diff = float('inf')
+        res = []
+
+        for i in range(1, len(arr)):
+            diff = arr[i] - arr[i-1]
+            if diff < min_diff:
+                min_diff = diff
+                res = [[arr[i-1], arr[i]]]
+            elif diff == min_diff:
+                res.append([arr[i-1], arr[i]])
+
+        return res
+
+# Unique number of occurences
+class Solution(object):
+    def uniqueOccurrences(self, arr):
+        occurs = [arr.count(i) for i in set(arr)]
+        return len(occurs) == len(set(occurs))
+
+# Find the highest altitude
+class Solution(object):
+    def largestAltitude(self, gain):
+        altitude = 0
+        highest = 0
+
+        for g in gain:
+            altitude += g
+            highest = max(highest, altitude)
+
+        return highest
+
+# Find first palindromic string in the array
+class Solution(object):
+    def firstPalindrome(self, words):
+        for i in words:
+            if i == i[::-1]:
+                return i
+        return ""
