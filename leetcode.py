@@ -195,3 +195,105 @@ class Solution(object):
                 return i
         return ""
     
+# Sum of squares of special elements
+class Solution(object):
+    def sumOfSquares(self, nums):
+        return sum([nums[i-1]**2 for i in range(1,len(nums)+1) if len(nums)%i==0])
+
+# Split strings by separator
+class Solution(object):
+    def splitWordsBySeparator(self, words, separator):
+        res = []
+        for i in words:
+            new_ls = i.split(separator)
+            for word in new_ls: 
+                if word != "": res.append(word)
+        return res
+
+# Number of employees who met the target
+class Solution(object):
+    def numberOfEmployeesWhoMetTarget(self, hours, target):
+        return len([i for i in hours if i>=target])
+
+# Count pairs whose sum is less than target
+class Solution(object):
+    def countPairs(self, nums, target):
+        count = 0
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                if nums[i]+nums[j]<target: count += 1
+        return count
+
+# Check if a string is an acronym of words
+class Solution(object):
+    def isAcronym(self, words, s):
+        if len(s) != len(words): return False
+        for i in range(len(s)):
+            if s[i]!=words[i][0]: return False
+        return True
+
+# Points that intersect with cars
+class Solution(object):
+    def numberOfPoints(self, nums):
+        all_points = set()
+
+        for i in nums:
+            for x in range(i[0], i[1]+1): all_points.add(x)
+        
+        return len(all_points)
+
+# Sum of values at indices with K set bits
+class Solution(object):
+    def sumIndicesWithKSetBits(self, nums, k):
+        return sum([nums[i] for i in range(len(nums)) if bin(i)[2:].count("1")==k])
+
+# Subarrays distinct element sum of squares I
+class Solution(object):
+    def sumCounts(self, nums):
+        res = 0
+        for i in range(len(nums)):
+            for x in range(len(nums)+1):
+                if nums[i:x] != []: res += len(set(nums[i:x])) ** 2
+        return res
+
+# Find words containing character
+class Solution(object):
+    def findWordsContaining(self, words, x):
+        return [i for i in range(len(words)) if x in words[i]]
+
+# Find the peaks
+class Solution(object):
+    def findPeaks(self, mountain):
+        res = []
+        for i in range(1, len(mountain)-1):
+            if mountain[i]>mountain[i-1] and mountain[i]>mountain[i+1]: res.append(i)
+        return res
+
+# Find common elements between two arrays
+class Solution(object):
+    def findIntersectionValues(self, nums1, nums2):
+        return [len([i for i in nums1 if i in nums2])]+[len([i for i in nums2 if i in nums1])]
+
+# Minimum number game
+class Solution(object):
+    def numberGame(self, nums):
+        res = []
+        while nums!=[]:
+            a = min(nums)
+            nums.pop(nums.index(min(nums)))
+            b = min(nums)
+            nums.pop(nums.index(min(nums)))
+            res.append(b)
+            res.append(a)
+        return res
+
+# Count elements with maximum frequency
+class Solution(object):
+    def maxFrequencyElements(self, nums):
+        max_freq = max([nums.count(i) for i in set(nums)])
+        count = 0
+
+        for i in nums:
+            if nums.count(i)==max_freq: count += 1
+        
+        return count
