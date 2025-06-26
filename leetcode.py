@@ -297,4 +297,3 @@ class Solution(object):
             if nums.count(i)==max_freq: count += 1
         
         return count
-
